@@ -24,5 +24,31 @@ namespace Palindrome
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            tbHelp.Text = "A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward";
+        }
+
+        private void btnExecute_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                bool canContinue = !string.IsNullOrEmpty(txtPalindrome.Text) && (rbWord.IsChecked == true || rbSentence.IsChecked == true);
+                if (canContinue)
+                {
+                    bool result = (rbWord.IsChecked == true) ? PalindromeChecker.isWordAPalindrome(txtPalindrome.Text) : PalindromeChecker.isSentenceAPalindrome(txtPalindrome.Text);
+                    tbResult.Text = result ? $"{txtPalindrome.Text} is a palindrome" : $"{txtPalindrome.Text} is not a palindrome";
+                }
+                else
+                {
+                    tbResult.Text = "Please input a word or sentence and select if it is a word or sentence!!!";
+                }
+            }
+            catch (Exception)
+            {
+                tbResult.Text = "An error has occurred. Please try again!";
+            }
+        }
     }
 }

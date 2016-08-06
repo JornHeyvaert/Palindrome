@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Palindrome"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Palindrome" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
-        
+        <Label x:Name="lblWelcomeText" Content="Welcome To Palindrome Application" HorizontalAlignment="Center" Margin="137,46,124,0" VerticalAlignment="Top" RenderTransformOrigin="0.689,-0.966" Width="256" FontWeight="Bold"/>
+        <Label x:Name="lblNumber" Content="Please input a word or sentence:" HorizontalAlignment="Left" Margin="17,94,0,0" VerticalAlignment="Top" Width="193"/>
+        <TextBox x:Name="txtPalindrome" HorizontalAlignment="Left" Height="44" Margin="227,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262"></TextBox>
+        <Button x:Name="btnExecute" Click="btnExecute_Click" Content="Is this a Palindrome?" HorizontalAlignment="Left" Margin="316,165,0,0" VerticalAlignment="Top" Width="165"/>
+        <TextBlock x:Name="tbResult" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="148,195,0,0" VerticalAlignment="Top" Width="356" Height="43"/>
+        <TextBlock x:Name="tbHelp" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="3,244,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.946,-0.48" Height="70" Width="512"/>
+        <Label x:Name="lblResultLabel" Content="Result:" HorizontalAlignment="Left" Margin="26,191,0,0" VerticalAlignment="Top" Width="109"/>
+        <RadioButton x:Name="rbWord" Content="Word" HorizontalAlignment="Left" Margin="63,165,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbSentence" Content="Sentence" HorizontalAlignment="Left" Margin="162,165,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
